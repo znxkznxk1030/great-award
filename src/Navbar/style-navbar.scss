@@ -40,9 +40,8 @@ header {
     background: #464655;
     top: 100%;
     right: 0;
-    max-height: 0px;
-    transition: max-height .3s linear 0s;
-    overflow: hidden;
+    transition: all .5s linear 0s;
+    clip-path: circle(0px at top right);
 
     ul {
       list-style: none;
@@ -61,7 +60,7 @@ header {
     a {
       color: #ebebd3;
       display: block;
-      padding: 2em 6em;
+      padding: 2em 4em 2em 1.5em;
       text-transform: uppercase;
       text-decoration: none;
       font-weight: 400;
@@ -75,10 +74,18 @@ header {
 
   }
 
+  .site-nav--icon {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: 1.5em;
+    width: 1.1em;
+    text-align: right;
+    color: rgba(255, 255, 255, .4)
+  }
+
   .site-nav--open {
-    height: auto;
-    max-height: 500px;
-    transition: max-height .5s linear 0s;
+    clip-path: circle(150% at top right);
+    transition: all .5s linear 0s;
   }
 
   .site-nav--close {
@@ -174,8 +181,9 @@ header {
       }
     }
 
-    .menu-toggle {
+  }
+
+  .menu-toggle {
       display: none;
-    }
   }
 }
