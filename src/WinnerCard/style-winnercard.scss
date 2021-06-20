@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Oswald:wght@400;500&family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
+$card-width: 270px;
+$card-height: 410px;
+
+$info-top-height: 213px;
+$info-name-height: 45px;
+$info-bottom-height: $card-height - $info-top-height - $info-name-height;
+
+$font-color: #412E1C;
+
+$cell-width: 70px;
+
+.ent-card {
+  width: $card-width;
+  height: $card-height;
+  // background: red;
+  background-image: url("https://assets.codepen.io/1328906/fifa-gold-background.png?width=322&height=450&format=auto");
+  background-position: center center;
+  color: $font-color;
+  z-index: 10;
+
+  .info-top {
+    width: 100%;
+    height: $info-top-height;
+    // background: red;
+    display: flex;
+
+    .profile-left {
+      width: 45%;
+      height: 100%;
+      // background: red;
+      & > * {
+        margin-left: 23px;
+        text-align: center;
+      }
+
+      .total-score {
+        // background: green;
+        margin-top: 40px;
+        height: 55px;
+        font-size: 47px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 400;
+        letter-spacing: -1px;
+        span {
+          display: inline-block;
+          margin: 5px -2px 0 0;
+        }
+      }
+
+      .position {
+        // background: blue;
+        height: 30px;
+        font-size: 25px;
+        font-family: 'Oswald', sans-serif;
+        span {
+          display: inline-block;
+          // margin: -5px 0 0;
+        }
+      }
+      
+      .company {
+        height: 70px;
+        img{
+          margin: 15px 0 0 6px;
+        }
+      }
+    }
+
+    .profile-right {
+      width: 60%;
+      height: 100%;
+      // background: green;
+      position: relative;
+
+      img {
+        position: absolute;
+        bottom: 0;
+        right: 5px;
+      }
+    }
+
+  }
+
+  .info-name {
+    width: 100%;
+    height: $info-name-height;
+    // background: green;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    span {
+      display: inline-block;
+      // margin: 5px 0 0;
+    }
+  }
+
+  .info-bottom {
+    width: 100%;
+    height: $info-bottom-height;
+    // background: blue;
+    
+    display: grid;
+    grid-template-columns: 40px $cell-width auto $cell-width 40px;
+    grid-template-rows: 0px 18% 18% 18%;
+    column-gap: 10px;
+    row-gap: 5px;
+
+    .cell-1 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    
+    .cell-2 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    
+    .cell-3 {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+    
+    .cell-4 {
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+    
+    .cell-5 {
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 3;
+      grid-row-end: 4;
+    }
+    
+    .cell-6 {
+      grid-column-start: 4;
+      grid-column-end: 5;
+      grid-row-start: 4;
+      grid-row-end: 5;
+    }
+    
+    
+    div[class*="cell-"] {
+      display: flex;
+      // background: red;
+      overflow: hidden;
+      
+      .stat-score {
+        width: 45%;
+        // background: green;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        margin-top: -3px;
+        letter-spacing: -1px;
+        text-align: center;
+        font-size: 25px;
+      }
+      
+      .stat-title {
+        font-family: 'Open Sans Condensed', sans-serif;
+        margin: -5px 0 0 3px;
+        letter-spacing: -1px;
+        font-size: 25px;
+      }
+    }
+  }
+}

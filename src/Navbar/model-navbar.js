@@ -16,6 +16,4 @@ const menulist = [
   },
 ];
 
-export {
-  menulist,
-}
+export { menulist };

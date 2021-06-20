@@ -24,14 +24,12 @@ class Navbar extends React.Component {
       <header>
         <div className="container">
           <h1 className="logo">
-            ent<span>honor</span>
+            great<span>awards</span>
           </h1>
           <nav
             className={
               "site-nav " +
-              (this.state.isMenuToggleOn
-                ? "site-nav--open "
-                : " ")
+              (this.state.isMenuToggleOn ? "site-nav--open " : " ")
             }
           >
             <ul>
@@ -39,7 +37,10 @@ class Navbar extends React.Component {
                 return (
                   <li key={index}>
                     <a href="">
-                      <i className={" fa " + menu.icon + " site-nav--icon "}></i>{menu.name}
+                      <i
+                        className={" fa " + menu.icon + " site-nav--icon "}
+                      ></i>
+                      {menu.name}
                     </a>
                   </li>
                 );
@@ -51,9 +52,7 @@ class Navbar extends React.Component {
             <div
               className={
                 "hamburger " +
-                (this.state.isMenuToggleOn
-                  ? "hamburger--open "
-                  : " ")
+                (this.state.isMenuToggleOn ? "hamburger--open " : " ")
               }
             ></div>
           </div>
