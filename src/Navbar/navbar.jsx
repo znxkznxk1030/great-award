@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { menulist } from "./model-navbar";
 import "./style-navbar.scss";
 
@@ -36,12 +37,14 @@ class Navbar extends React.Component {
               {this.state.menulist.map((menu, index) => {
                 return (
                   <li key={index}>
-                    <a href="">
-                      <i
-                        className={" fa " + menu.icon + " site-nav--icon "}
-                      ></i>
-                      {menu.name}
-                    </a>
+                    <Link to={menu.link}>
+                      <a href="">
+                        <i
+                          className={" fa " + menu.icon + " site-nav--icon "}
+                        ></i>
+                        {menu.name}
+                      </a>
+                    </Link>
                   </li>
                 );
               })}

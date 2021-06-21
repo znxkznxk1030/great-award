@@ -10,8 +10,8 @@ const menulist = [
     icon: "fa-desktop",
   },
   {
-    name: "Talents",
-    link: "",
+    name: "Actors",
+    link: "/actors",
     icon: "fa-users",
   },
 ];
