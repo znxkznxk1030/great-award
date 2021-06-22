@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
 
 $frame-height-mb: 120px;
 $background-height-mb: $frame-height-mb * 6;
@@ -9,7 +8,6 @@ $frame-height: 320px;
 $background-height: $frame-height * 3;
 $text-margin-top: $frame-height / 2 + 30px;
 
-
 .actors-background {
   height: $background-height-mb;
   width: 100%;
@@ -18,21 +16,49 @@ $text-margin-top: $frame-height / 2 + 30px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  font-family: 'Black Han Sans', sans-serif;
+  font-family: "Black Han Sans", sans-serif;
 
   .actor-frame {
     width: 100%;
     height: $frame-height-mb;
-    background: #F9E44C;
+    background: #f9e44c;
     text-align: center;
     border-bottom: 0.1em solid black;
     position: relative;
     z-index: 0;
     overflow: hidden;
 
+    .bg-triangle--before {
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      border-left: 500px solid black;
+      border-bottom: 500px solid transparent;
+      top: -600px;
+      left: 0;
+      transition: top 0.3s ease-out 0s;
+    }
+
+    .bg-triangle--after {
+      position: absolute;
+      width: 0px;
+      height: 0px;
+      border-right: 500px solid black;
+      border-top: 500px solid transparent;
+      top: 200px;
+      right: 0;
+      transition: top 0.3s ease-out 0s;
+      // top: -210px;
+      // right: 0;
+    }
+
     img {
       position: absolute;
       z-index: -1;
+    }
+
+    div[class^="actor-img-"] {
+      transition: all 0.3s ease-out 0.2s;
     }
 
     .actor-img-0 {
@@ -69,6 +95,103 @@ $text-margin-top: $frame-height / 2 + 30px;
       font-size: 3em;
     }
   }
+
+  @for $i from 0 through 1 {
+    .actor-animate-#{$i}:active > .actor-img-#{$i},
+    .actor-animate-#{$i}:hover > .actor-img-#{$i} {
+      transform: scale(1.2) translate(-20px);
+      transition: all 0.3s ease-in 0.2s;
+    }
+  }
+
+  @for $i from 2 through 5 {
+    .actor-animate-#{$i}:active > .actor-img-#{$i},
+    .actor-animate-#{$i}:hover > .actor-img-#{$i} {
+      transform: scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+  }
+
+  .actor-animate-0:active > .bg-triangle--after,
+  .actor-animate-0:hover > .bg-triangle--after {
+    top: -220px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  // .actor-animate-0:active > .actor-img-0,
+  // .actor-animate-0:hover > .actor-img-0 {
+  //   left: -100px;
+  //   transform: scale(1.2);
+  //   transition: all 0.3s ease-in 0.2s;
+  // }
+
+  .actor-animate-1:active > .bg-triangle--after,
+  .actor-animate-1:hover > .bg-triangle--after {
+    top: -180px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  .actor-animate-1:active > .bg-triangle--before,
+  .actor-animate-1:hover > .bg-triangle--before {
+    top: -400px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  // .actor-animate-1:active > .actor-img-1,
+  // .actor-animate-1:hover > .actor-img-1 {
+  //   left: 10px;
+  //   transform: scale(1.2);
+  //   transition: all 0.3s ease-in 0.2s;
+  // }
+
+  .actor-animate-2:active > .bg-triangle--after,
+  .actor-animate-2:hover > .bg-triangle--after {
+    top: -50px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  .actor-animate-2:active > .bg-triangle--before,
+  .actor-animate-2:hover > .bg-triangle--before {
+    top: -300px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  // .actor-animate-2:active > .actor-img-2,
+  // .actor-animate-2:hover > .actor-img-2 {
+  //   left: 90px;
+  //   transform: scale(1.2);
+  //   transition: all 0.3s ease-in 0.2s;
+  // }
+
+  .actor-animate-3:active > .bg-triangle--after,
+  .actor-animate-3:hover > .bg-triangle--after {
+    top: -10px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  .actor-animate-3:active > .bg-triangle--before,
+  .actor-animate-3:hover > .bg-triangle--before {
+    top: -230px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  .actor-animate-4:active > .bg-triangle--before,
+  .actor-animate-4:hover > .bg-triangle--before {
+    top: -210px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  .actor-animate-4:active > .bg-triangle--after,
+  .actor-animate-4:hover > .bg-triangle--after {
+    top: 20px;
+    transition: top 0.5s ease-in 0s;
+  }
+
+  .actor-animate-5:active > .bg-triangle--before,
+  .actor-animate-5:hover > .bg-triangle--before {
+    top: -120px;
+    transition: top 0.5s ease-in 0s;
+  }
 }
 
 @media (min-width: 800px) {
@@ -79,9 +202,9 @@ $text-margin-top: $frame-height / 2 + 30px;
       height: $frame-height;
       border: 0.1em solid black;
       p {
-      margin-top: $text-margin-top;
-      font-size: 4em;
-    }
+        margin-top: $text-margin-top;
+        font-size: 4em;
+      }
     }
   }
 }

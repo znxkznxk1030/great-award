@@ -16,9 +16,15 @@ class Actors extends React.Component {
       <div className="actors-background">
         {this.state.actors.map((actor, index) => {
           return (
-            <div className="actor-frame" key={index}>
-              <img src={actor.src} alt={actor.name} className={"actor-img-" + index}/>
+            <div className={"actor-frame actor-animate-" + index} key={index}>
+              <img
+                src={actor.src}
+                alt={actor.name}
+                className={"actor-img-" + index}
+              />
               <p>{actor.name}</p>
+              <div class="bg-triangle--before"></div>
+              <div class="bg-triangle--after"></div>
             </div>
           );
         })}

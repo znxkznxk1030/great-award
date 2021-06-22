@@ -41,7 +41,7 @@ header {
     background: #464655;
     top: 100%;
     right: 0;
-    transition: all .5s linear 0s;
+    transition: all 0.5s linear 0s;
     clip-path: circle(0px at top right);
 
     ul {
@@ -72,7 +72,6 @@ header {
         color: #464655;
       }
     }
-
   }
 
   .site-nav--icon {
@@ -81,17 +80,17 @@ header {
     font-size: 1.5em;
     width: 1.1em;
     text-align: right;
-    color: rgba(255, 255, 255, .4)
+    color: rgba(255, 255, 255, 0.4);
   }
 
   .site-nav--open {
     clip-path: circle(150% at top right);
-    transition: all .5s linear 0s;
+    transition: all 0.5s linear 0s;
   }
 
   .site-nav--close {
     max-height: 0px;
-    transition: max-height .5s linear 0s;
+    transition: max-height 0.5s linear 0s;
   }
 
   .menu-toggle {
@@ -154,7 +153,7 @@ header {
     clip-path: initial;
     height: auto;
     max-height: 500px;
-    transition: max-height .3s linear 0s;
+    transition: max-height 0.3s linear 0s;
 
     ul {
       margin: 0;
@@ -181,10 +180,9 @@ header {
         color: #464655;
       }
     }
-
   }
 
   .menu-toggle {
-      display: none;
+    display: none;
   }
 }
