@@ -52,6 +52,26 @@ $text-margin-top: $frame-height / 2 + 30px;
       // right: 0;
     }
 
+    div[class^="comment-"] {
+      position: absolute;
+      text-align: center;
+      color: white;
+      height: 100%;
+      width: 100%;
+      font-size: 2em;
+      top: 40px;
+      transition: all 0.3s ease-out 0.2s;
+    }
+
+    .comment--left {
+      transform: translateX(-400px);
+      
+    }
+
+    .comment--right {
+      transform: translateX(400px);
+    }
+
     img {
       position: absolute;
       z-index: -1;
@@ -96,18 +116,30 @@ $text-margin-top: $frame-height / 2 + 30px;
     }
   }
 
-  @for $i from 0 through 1 {
+  @for $i from 0 through 5 {
     .actor-animate-#{$i}:active > .actor-img-#{$i},
     .actor-animate-#{$i}:hover > .actor-img-#{$i} {
-      transform: scale(1.2) translate(-20px);
+      transform: scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
+    .actor-animate-#{$i}:active > p,
+    .actor-animate-#{$i}:hover > p {
+      opacity: 0;
       transition: all 0.3s ease-in 0.2s;
     }
   }
 
-  @for $i from 2 through 5 {
-    .actor-animate-#{$i}:active > .actor-img-#{$i},
-    .actor-animate-#{$i}:hover > .actor-img-#{$i} {
-      transform: scale(1.2);
+  @for $i from 0 through 5 {
+    .actor-animate-#{$i}:active > .comment--left,
+    .actor-animate-#{$i}:hover > .comment--left {
+      transform: translateX(-80px);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
+    .actor-animate-#{$i}:active > .comment--right,
+    .actor-animate-#{$i}:hover > .comment--right {
+      transform: translateX(70px);
       transition: all 0.3s ease-in 0.2s;
     }
   }
@@ -117,13 +149,6 @@ $text-margin-top: $frame-height / 2 + 30px;
     top: -220px;
     transition: top 0.5s ease-in 0s;
   }
-
-  // .actor-animate-0:active > .actor-img-0,
-  // .actor-animate-0:hover > .actor-img-0 {
-  //   left: -100px;
-  //   transform: scale(1.2);
-  //   transition: all 0.3s ease-in 0.2s;
-  // }
 
   .actor-animate-1:active > .bg-triangle--after,
   .actor-animate-1:hover > .bg-triangle--after {
@@ -137,31 +162,18 @@ $text-margin-top: $frame-height / 2 + 30px;
     transition: top 0.5s ease-in 0s;
   }
 
-  // .actor-animate-1:active > .actor-img-1,
-  // .actor-animate-1:hover > .actor-img-1 {
-  //   left: 10px;
-  //   transform: scale(1.2);
-  //   transition: all 0.3s ease-in 0.2s;
-  // }
-
   .actor-animate-2:active > .bg-triangle--after,
   .actor-animate-2:hover > .bg-triangle--after {
-    top: -50px;
+    top: -100px;
     transition: top 0.5s ease-in 0s;
   }
 
   .actor-animate-2:active > .bg-triangle--before,
   .actor-animate-2:hover > .bg-triangle--before {
-    top: -300px;
+    top: -290px;
     transition: top 0.5s ease-in 0s;
   }
 
-  // .actor-animate-2:active > .actor-img-2,
-  // .actor-animate-2:hover > .actor-img-2 {
-  //   left: 90px;
-  //   transform: scale(1.2);
-  //   transition: all 0.3s ease-in 0.2s;
-  // }
 
   .actor-animate-3:active > .bg-triangle--after,
   .actor-animate-3:hover > .bg-triangle--after {
