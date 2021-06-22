@@ -60,7 +60,7 @@ $text-margin-top: $frame-height / 2 + 30px;
       width: 100%;
       font-size: 2em;
       top: 40px;
-      transition: all 0.3s ease-out 0.2s;
+      transition: all 0.1s ease-out 0s;
     }
 
     .comment--left {
@@ -126,7 +126,7 @@ $text-margin-top: $frame-height / 2 + 30px;
     .actor-animate-#{$i}:active > p,
     .actor-animate-#{$i}:hover > p {
       opacity: 0;
-      transition: all 0.3s ease-in 0.2s;
+      transition: all 0.2s ease-in 0s;
     }
   }
 
@@ -183,7 +183,7 @@ $text-margin-top: $frame-height / 2 + 30px;
 
   .actor-animate-3:active > .bg-triangle--before,
   .actor-animate-3:hover > .bg-triangle--before {
-    top: -230px;
+    top: -210px;
     transition: top 0.5s ease-in 0s;
   }
 
