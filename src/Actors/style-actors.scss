@@ -301,7 +301,7 @@ $text-margin-top: $frame-height / 2 + 30px;
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1200px) {
   .actors-background {
     height: $background-height;
     .actor-frame {
@@ -323,6 +323,42 @@ $text-margin-top: $frame-height / 2 + 30px;
         position: static;
       }
     }
+    .actor-animate-0:active > .actor-img-0,
+    .actor-animate-0:hover > .actor-img-0 {
+      transform: translateX(120px) scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
+    .actor-animate-1:active > .actor-img-1,
+    .actor-animate-1:hover > .actor-img-1 {
+      transform: translateX(120px) scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
+    .actor-animate-2:active > .actor-img-2,
+    .actor-animate-2:hover > .actor-img-2 {
+      transform: translateX(70px) scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
+    .actor-animate-3:active > .actor-img-3,
+    .actor-animate-3:hover > .actor-img-3 {
+      transform: translateX(110px) scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
+    .actor-animate-4:active > .actor-img-4,
+    .actor-animate-4:hover > .actor-img-4 {
+      transform: translateX(150px) scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
+    .actor-animate-5:active > .actor-img-5,
+    .actor-animate-5:hover > .actor-img-5 {
+      transform: translateX(30px) scale(1.2);
+      transition: all 0.3s ease-in 0.2s;
+    }
+
     @for $i from 0 through 5 {
       .actor-animate-#{$i}:active > .actor-nickname,
       .actor-animate-#{$i}:hover > .actor-nickname {
