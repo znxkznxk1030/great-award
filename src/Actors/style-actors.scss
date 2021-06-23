@@ -216,6 +216,25 @@ $text-margin-top: $frame-height / 2 + 30px;
   }
 }
 
+@media only screen and (max-width: 350px) {
+  .actors-background {
+    .actor-frame {
+
+      .actor-img-3 {
+        left: -20px;
+      }
+
+      .actor-img-4 {
+        left: 50px;
+      }
+
+      .actor-img-5 {
+        left: 50px;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 600px) {
   .actors-background {
     height: $background-height;
