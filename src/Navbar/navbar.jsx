@@ -24,9 +24,11 @@ class Navbar extends React.Component {
     return (
       <header>
         <div className="container">
-          <h1 className="logo">
-            great<span>awards</span>
-          </h1>
+          <Link to="/">
+            <h1 className="logo">
+              great<span>awards</span>
+            </h1>
+          </Link>
           <nav
             className={
               "site-nav " +

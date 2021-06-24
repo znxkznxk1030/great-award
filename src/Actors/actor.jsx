@@ -2,20 +2,19 @@ import React from "react";
 import "./style-actors.scss";
 
 class Actor extends React.Component {
-
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
-      displayName: this.props.actor.name
-    }
+      displayName: this.props.actor.name,
+    };
   }
 
   getComments(actor) {
     return actor.comment.split("&");
   }
 
-  changeActorName () {
-    this.setState({displayName: this.props.actor.nickname});
+  changeActorName() {
+    this.setState({ displayName: this.props.actor.nickname });
   }
 
   render() {
@@ -26,7 +25,11 @@ class Actor extends React.Component {
     const rightComment = comments[1];
 
     return (
-      <div onMouseOver={this.changeActorName.bind(this)} className={"actor-frame actor-animate-" + index} key={index}>
+      <div
+        onMouseOver={this.changeActorName.bind(this)}
+        className={"actor-frame actor-animate-" + index}
+        key={index}
+      >
         <img
           src={actor.src}
           alt={actor.name}

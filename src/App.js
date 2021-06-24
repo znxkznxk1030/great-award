@@ -7,6 +7,7 @@ import Navbar from "./Navbar/navbar";
 
 const Home = lazy(() => import("./Home/home"));
 const Actors = lazy(() => import("./Actors/actors"));
+const Winner = lazy(() => import("./WeeklyWinner/winner"));
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Navbar></Navbar>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/weekly-winner" component={Winner} />
           <Route exact path="/actors" component={Actors} />
         </Switch>
       </Router>

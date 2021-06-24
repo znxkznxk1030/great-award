@@ -7,7 +7,7 @@ const actors = [
   },
   {
     name: "김 종 민",
-    nickname: "김 종 밤",
+    nickname: "김 종 문",
     src: "https://assets.codepen.io/1328906/min-001.png",
     comment: "& 찾은거 같은데?",
   },
