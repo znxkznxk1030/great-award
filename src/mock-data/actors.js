@@ -37,4 +37,25 @@ const actors = [
   },
 ];
 
-export { actors };
+const actorBgImgList = [
+  {
+    src: "https://assets.codepen.io/1328906/kang-002.png",
+  },
+  {
+    src: "https://assets.codepen.io/1328906/min-002.png",
+  },
+  {
+    src: "https://assets.codepen.io/1328906/hyun-002.png",
+  },
+  {
+    src: "https://assets.codepen.io/1328906/dong-002.png",
+  },
+  {
+    src: "https://assets.codepen.io/1328906/you-003.png",
+  },
+  {
+    src: "https://assets.codepen.io/1328906/pio-002.png",
+  },
+];
+
+export { actors, actorBgImgList };

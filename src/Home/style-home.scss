@@ -1,9 +1,136 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
 
-main {
-  height: 100%;
+$color-yellow: #f9e44c;
+$color-light-pink: #fefdf6;
+
+
+$origin-top-0: random(83) + vh;
+$origin-left-0: random(80) + wh;
+$origin-top-1: random(83) + vh;
+$origin-left-1: random(80) + wh;
+$origin-top-2: random(83) + vh;
+$origin-left-2: random(80) + wh;
+$origin-top-3: random(83) + vh;
+$origin-left-3: random(80) + wh;
+$origin-top-4: random(83) + vh;
+$origin-left-4: random(80) + wh;
+$origin-top-5: random(83) + vh;
+$origin-left-5: random(80) + wh;
+
+$move-top-0: random(83) + vh;
+$move-left-0: random(80) + wh;
+$move-top-1: random(83) + vh;
+$move-left-1: random(80) + wh;
+$move-top-2: random(83) + vh;
+$move-left-2: random(80) + wh;
+$move-top-3: random(83) + vh;
+$move-left-3: random(80) + wh;
+$move-top-4: random(83) + vh;
+$move-left-4: random(80) + wh;
+$move-top-5: random(83) + vh;
+$move-left-5: random(80) + wh;
+// #F09282
+.home-background {
+  // height: 100vh;
   width: 100%;
   background-size: cover;
   background-color: black;
+  background-image: url("./space-background.jpeg");
+  background-size: cover;
+
+  .title {
+    font-family: "Black Han Sans", sans-serif;
+    font-size: 6em;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    color: #fefdf6;
+    p {
+      padding-top: 0.3em;
+      color: #f09282;
+      animation: font-color-change 5s infinite;
+    }
+  }
+
+  .video-wrapper {
+    width: 100%;
+    .video--iframe {
+      padding: 0.5em;
+      width: 100%;
+    }
+  }
+
+  .context {
+    width: 100%;
+    height: 130vh;
+    position: relative;
+    img {
+      width: 250px;
+      height: 350px;
+      position: absolute;
+    }
+
+    @for $i from 0 through 5 {
+      .actor-img-#{$i} {
+        animation: actor-animate-#{$i} 40s ease-in-out infinite 0s alternate;
+      }
+    }
+  }
+}
+
+@for $i from 0 through 5 {
+
+  @keyframes actor-animate-#{$i} {
+    0% {
+      top: random(10) + vh;
+      left: random(90) + vw;
+      transform: rotate(0deg) scale(random(10) / 7);
+    }
+
+    25% {
+      top: random(93) + vh;
+      left: random(10) + vw;
+      transform: rotate(360deg) scale(random(10) / 7);
+    }
+
+    50% {
+      top: (50 + random(20)) + vh;
+      left: random(90) + vw;
+      transform: rotate(0deg) scale(random(10) / 7);
+    }
+
+    75% {
+      top: random(10) + vh;
+      left: random(90) + vw;
+      transform: rotate(360deg) scale(random(10) / 7);
+    }
+
+    100% {
+      top: random(93) + vh;
+      left: random(90) + vw;
+      transform: rotate(0deg) scale(random(10) / 7);
+    }
+  }
+}
+
+@keyframes font-color-change {
+  0% {
+    color: #d45651;
+  }
+
+  50% {
+    color: #fefdf6;
+  }
+
+  100% {
+    color: #d45651;
+  }
+}
+
+@media (min-width: 1200px) {
+  .video--iframe {
+    padding: 0em;
+    height: 95vh;
+  }
 }
