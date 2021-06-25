@@ -1,35 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
 
-$color-yellow: #f9e44c;
+$color-pink: #f09282;
 $color-light-pink: #fefdf6;
-
-
-$origin-top-0: random(83) + vh;
-$origin-left-0: random(80) + wh;
-$origin-top-1: random(83) + vh;
-$origin-left-1: random(80) + wh;
-$origin-top-2: random(83) + vh;
-$origin-left-2: random(80) + wh;
-$origin-top-3: random(83) + vh;
-$origin-left-3: random(80) + wh;
-$origin-top-4: random(83) + vh;
-$origin-left-4: random(80) + wh;
-$origin-top-5: random(83) + vh;
-$origin-left-5: random(80) + wh;
-
-$move-top-0: random(83) + vh;
-$move-left-0: random(80) + wh;
-$move-top-1: random(83) + vh;
-$move-left-1: random(80) + wh;
-$move-top-2: random(83) + vh;
-$move-left-2: random(80) + wh;
-$move-top-3: random(83) + vh;
-$move-left-3: random(80) + wh;
-$move-top-4: random(83) + vh;
-$move-left-4: random(80) + wh;
-$move-top-5: random(83) + vh;
-$move-left-5: random(80) + wh;
 // #F09282
 .home-background {
   // height: 100vh;
@@ -39,32 +12,65 @@ $move-left-5: random(80) + wh;
   background-image: url("./space-background.jpeg");
   background-size: cover;
 
-  .title {
+  .title--header {
     font-family: "Black Han Sans", sans-serif;
-    font-size: 6em;
+    font-size: 3em;
     text-align: center;
     width: 100%;
     height: auto;
-    color: #fefdf6;
+    color: $color-light-pink;
+    z-index: 10;
     p {
       padding-top: 0.3em;
-      color: #f09282;
-      animation: font-color-change 5s infinite;
+      color: $color-pink;
+      animation: font-color-change 7s infinite;
     }
   }
 
-  .video-wrapper {
-    width: 100%;
-    .video--iframe {
-      padding: 0.5em;
-      width: 100%;
+
+  .star-wars {
+    display: flex;
+    justify-content: center;
+    color: #FFE81F;
+    font-size: 4em;
+    overflow: hidden;
+    line-height: 150%;
+    perspective: 400px;
+    position: relative;
+
+    .crawl {
+      position: absolute;
+      // top: 99999px;
+      transform-origin: 50% 100%;
+      animation: crawl 20s linear 0s infinite;
+      z-index: 10;
+
+      .text--inline {
+        position: relative;
+        height: 1em;
+        .text--position {
+          position: absolute;
+          left: 1em;
+        }
+
+        .text--name {
+          position: absolute;
+          left: 3em;
+        }
+      }
+
+      * {
+        width: 300%;
+        margin-top: 1em;
+      }
     }
   }
 
   .context {
     width: 100%;
-    height: 130vh;
+    height: 100vh;
     position: relative;
+
     img {
       width: 250px;
       height: 350px;
@@ -73,44 +79,64 @@ $move-left-5: random(80) + wh;
 
     @for $i from 0 through 5 {
       .actor-img-#{$i} {
+        z-index: 0;
         animation: actor-animate-#{$i} 40s ease-in-out infinite 0s alternate;
       }
+    }
+  }
+
+  .video-wrapper {
+    z-index: 10;
+    width: 100%;
+    .video--iframe {
+      padding: 0.5em;
+      width: 100%;
     }
   }
 }
 
 @for $i from 0 through 5 {
-
   @keyframes actor-animate-#{$i} {
     0% {
       top: random(10) + vh;
       left: random(90) + vw;
-      transform: rotate(0deg) scale(random(10) / 7);
+      transform: rotate(0deg) scale(random(10) / 13);
     }
 
     25% {
       top: random(93) + vh;
       left: random(10) + vw;
-      transform: rotate(360deg) scale(random(10) / 7);
+      transform: rotate(360deg) scale(random(10) / 13);
     }
 
     50% {
-      top: (50 + random(20)) + vh;
+      top: (30 + random(20)) + vh;
       left: random(90) + vw;
-      transform: rotate(0deg) scale(random(10) / 7);
+      transform: rotate(0deg) scale(random(10) / 13);
     }
 
     75% {
       top: random(10) + vh;
       left: random(90) + vw;
-      transform: rotate(360deg) scale(random(10) / 7);
+      transform: rotate(360deg) scale(random(10) / 13);
     }
 
     100% {
       top: random(93) + vh;
       left: random(90) + vw;
-      transform: rotate(0deg) scale(random(10) / 7);
+      transform: rotate(0deg) scale(random(10) / 13);
     }
+  }
+}
+
+@keyframes crawl {
+  0% {
+    top: 2000px;
+    transform: rotateX(20deg) translateZ(0);
+  }
+  100% {
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
   }
 }
 
@@ -128,9 +154,185 @@ $move-left-5: random(80) + wh;
   }
 }
 
-@media (min-width: 1200px) {
-  .video--iframe {
-    padding: 0em;
-    height: 95vh;
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 220px) {
+  .home-background {
+    .title--header {
+      font-size: 2em;
+    }
+
+    .star-wars {
+      font-size: 5em;
+      height: 50vh;
+      .crawl {
+        left: -150px;
+        .text--inline {
+          .text--position {
+            left: 1em;
+          }
+
+          .text--name {
+            left: 5em;
+          }
+        }
+      }
+    }
+
+    .video--iframe {
+      padding: 0em;
+      height: 50vh;
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+  .home-background {
+    .title--header {
+      font-size: 3em;
+    }
+
+    .star-wars {
+      font-size: 5em;
+      height: 50vh;
+      .crawl {
+        left: -150px;
+        .text--inline {
+          .text--position {
+            left: 1em;
+          }
+
+          .text--name {
+            left: 5em;
+          }
+        }
+      }
+    }
+
+    .video--iframe {
+      padding: 0em;
+      height: 50vh;
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+  .home-background {
+    .title--header {
+      font-size: 4em;
+    }
+
+    .star-wars {
+      font-size: 5em;
+      height: 50vh;
+      .crawl {
+        .text--inline {
+          .text--position {
+            left: 1em;
+          }
+
+          .text--name {
+            left: 5em;
+          }
+        }
+      }
+    }
+
+    .video--iframe {
+      padding: 0em;
+      height: 50vh;
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  .home-background {
+    .title--header {
+      font-size: 6em;
+    }
+
+    .star-wars {
+      height: 50vh;
+      font-size: 10em;
+      .crawl {
+        .text--inline {
+          .text--position {
+            left: 1em;
+          }
+
+          .text--name {
+            left: 4em;
+          }
+        }
+      }
+    }
+
+    .video--iframe {
+      padding: 0em;
+      height: 50vh;
+    }
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  .home-background {
+    .title--header {
+      font-size: 6em;
+    }
+
+    .star-wars {
+      height: 50vh;
+      font-size: 10em;
+      .crawl {
+        .text--inline {
+          .text--position {
+            left: 1em;
+          }
+
+          .text--name {
+            left: 4em;
+          }
+        }
+      }
+    }
+
+    .video--iframe {
+      padding: 0em;
+      height: 50vh;
+    }
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  .home-background {
+    .title--header {
+      font-size: 6em;
+    }
+
+    .star-wars {
+      font-size: 10em;
+      text-align: justify;
+      letter-spacing: 60px;
+      .crawl {
+        .text--inline {
+          .text--position {
+            left: 1em;
+          }
+
+          .text--name {
+            left: 5em;
+          }
+        }
+      }
+    }
+
+    .video--iframe {
+      padding: 0em;
+      height: 95vh;
+    }
   }
 }
