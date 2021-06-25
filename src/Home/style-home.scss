@@ -28,11 +28,10 @@ $color-light-pink: #fefdf6;
     }
   }
 
-
   .star-wars {
     display: flex;
     justify-content: center;
-    color: #FFE81F;
+    color: #ffe81f;
     font-size: 4em;
     overflow: hidden;
     line-height: 150%;
@@ -43,7 +42,7 @@ $color-light-pink: #fefdf6;
       position: absolute;
       // top: 99999px;
       transform-origin: 50% 100%;
-      animation: crawl 20s linear 0s infinite;
+      animation: crawl 10s linear 0s infinite;
       z-index: 10;
 
       .text--inline {
@@ -136,7 +135,7 @@ $color-light-pink: #fefdf6;
     transform: rotateX(20deg) translateZ(0);
   }
   100% {
-    top: -6000px;
+    top: -8000px;
     transform: rotateX(25deg) translateZ(-2500px);
   }
 }

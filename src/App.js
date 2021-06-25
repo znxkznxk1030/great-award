@@ -15,9 +15,9 @@ const App = () => {
       <Router>
         <Navbar></Navbar>
         <Switch>
-          <Route exact path="/" component={Home} />
           <Route exact path="/weekly-winner" component={Winner} />
           <Route exact path="/actors" component={Actors} />
+          <Route component={Home} />
         </Switch>
       </Router>
     </div>

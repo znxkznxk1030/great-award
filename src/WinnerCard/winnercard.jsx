@@ -4,50 +4,50 @@ import "./style-winnercard.scss";
 class WinnerCard extends React.Component {
   render() {
     return (
-      <div class="ent-card">
-        <div class="info-top">
-          <div class="profile-left">
-            <div class="total-score">
+      <div className="ent-card">
+        <div className="info-top">
+          <div className="profile-left">
+            <div className="total-score">
               <span>93</span>
             </div>
-            <div class="position">
+            <div className="position">
               <span>MC</span>
             </div>
-            <div class="company">
+            <div className="company">
               <img src="https://assets.codepen.io/1328906/SM_OG_image.jpeg?width=60&height=31&format=auto" />
             </div>
           </div>
-          <div class="profile-right">
+          <div className="profile-right">
             <img src="https://assets.codepen.io/1328906/kang-001.png?width=174&height=175&format=auto" />
           </div>
         </div>
-        <div class="info-name">
+        <div className="info-name">
           <span>Kang Ho Dong</span>
         </div>
-        <div class="info-bottom">
-          <div class="cell-1">
-            <div class="stat-score">89</div>
-            <div class="stat-title">ENT</div>
+        <div className="info-bottom">
+          <div className="cell-1">
+            <div className="stat-score">89</div>
+            <div className="stat-title">ENT</div>
           </div>
-          <div class="cell-2">
-            <div class="stat-score">93</div>
-            <div class="stat-title">COR</div>
+          <div className="cell-2">
+            <div className="stat-score">93</div>
+            <div className="stat-title">COR</div>
           </div>
-          <div class="cell-3">
-            <div class="stat-score">81</div>
-            <div class="stat-title">DSC</div>
+          <div className="cell-3">
+            <div className="stat-score">81</div>
+            <div className="stat-title">DSC</div>
           </div>
-          <div class="cell-4">
-            <div class="stat-score">89</div>
-            <div class="stat-title">INT</div>
+          <div className="cell-4">
+            <div className="stat-score">89</div>
+            <div className="stat-title">INT</div>
           </div>
-          <div class="cell-5">
-            <div class="stat-score">35</div>
-            <div class="stat-title">TSG</div>
+          <div className="cell-5">
+            <div className="stat-score">35</div>
+            <div className="stat-title">TSG</div>
           </div>
-          <div class="cell-6">
-            <div class="stat-score">77</div>
-            <div class="stat-title">PHY</div>
+          <div className="cell-6">
+            <div className="stat-score">77</div>
+            <div className="stat-title">PHY</div>
           </div>
         </div>
       </div>

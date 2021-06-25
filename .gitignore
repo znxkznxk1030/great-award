@@ -106,3 +106,5 @@ dist
 # cache file
 package-lock.json
 yarn.lock
+
+build/

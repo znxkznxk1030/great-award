@@ -40,12 +40,10 @@ class Navbar extends React.Component {
                 return (
                   <li key={index}>
                     <Link to={menu.link}>
-                      <a href="">
-                        <i
-                          className={" fa " + menu.icon + " site-nav--icon "}
-                        ></i>
-                        {menu.name}
-                      </a>
+                      <i
+                        className={" fa " + menu.icon + " site-nav--icon "}
+                      ></i>
+                      {menu.name}
                     </Link>
                   </li>
                 );

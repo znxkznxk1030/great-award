@@ -20,7 +20,7 @@ class Home extends React.Component {
 
         <div className="context star-wars">
           <div className="crawl">
-            <h2> 대  탈  출  4 </h2>
+            <h2> 대 탈 출 4 </h2>
             <hr></hr>
             <p> 7 / 11 첫 방 송 </p>
             <hr></hr>
@@ -61,6 +61,7 @@ class Home extends React.Component {
           {this.state.actorBgImgList.map((actor, index) => (
             <img
               src={actor.src}
+              key={index}
               alt="404"
               className={"actor-img-" + index}
             ></img>
@@ -71,9 +72,9 @@ class Home extends React.Component {
             className="video--iframe"
             src="https://www.youtube.com/embed/IZfBeMuPSBg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </div>
