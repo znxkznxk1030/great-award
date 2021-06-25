@@ -20,16 +20,22 @@ class Home extends React.Component {
 
         <div className="context star-wars">
           <div className="crawl">
-            <h1> 대 탈 출 4 </h1>
-            <h2> 7 / 11 첫 방 송 </h2>
+            <h2> 대  탈  출  4 </h2>
+            <hr></hr>
+            <p> 7 / 11 첫 방 송 </p>
+            <hr></hr>
             <div className="text--inline">
               <p className="text--position">감독</p>
               <p className="text--name">정종연</p>
             </div>
+            <br></br>
+            <hr></hr>
             <div className="text--inline">
               <p className="text--position">미술</p>
               <p className="text--name">장연옥</p>
             </div>
+            <br></br>
+            <hr></hr>
             <div className="text--inline">
               <p className="text--position">출연</p>
               <p className="text--name">강호동</p>
@@ -49,6 +55,8 @@ class Home extends React.Component {
             <div className="text--inline">
               <p className="text--name">피오</p>
             </div>
+            <br></br>
+            <hr></hr>
           </div>
           {this.state.actorBgImgList.map((actor, index) => (
             <img
