@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/Chat/style-chat.scss"],"names":[],"mappings":"AAAA,iBACE,WAAY,CACZ,UAAW,CACX,eAAiB","file":"7.8cba6519.chunk.css","sourcesContent":[".chat-background {\n  height: 100%;\n  width: 100%;\n  background: black;\n}\n"]}
