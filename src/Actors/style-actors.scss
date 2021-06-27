@@ -303,6 +303,7 @@ $text-margin-top: $frame-height / 2 + 30px;
 @media only screen and (min-width: 1200px) {
   .actors-background {
     height: $background-height;
+    flex-direction: row;
     .actor-frame {
       width: 50%;
       height: $frame-height;

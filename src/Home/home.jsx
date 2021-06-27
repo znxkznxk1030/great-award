@@ -14,9 +14,9 @@ class Home extends React.Component {
   render() {
     return (
       <div className="home-background">
-        <div className="title--header">
+        {/* <div className="title--header">
           <p>대탈출 팬 사이트</p>
-        </div>
+        </div> */}
 
         <div className="context star-wars">
           <div className="crawl">

@@ -8,6 +8,8 @@ import Navbar from "./Navbar/navbar";
 const Home = lazy(() => import("./Home/home"));
 const Actors = lazy(() => import("./Actors/actors"));
 const Winner = lazy(() => import("./WeeklyWinner/winner"));
+const Vote = lazy(() => import("./Vote/vote"));
+const Chat = lazy(() => import("./Chat/chat"));
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Switch>
           <Route exact path="/weekly-winner" component={Winner} />
           <Route exact path="/actors" component={Actors} />
+          <Route exact path="/vote" component={Vote} />
+          <Route exact path="/chat" component={Chat} />
           <Route component={Home} />
         </Switch>
       </Router>

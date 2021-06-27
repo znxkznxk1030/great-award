@@ -42,7 +42,7 @@ $color-light-pink: #fefdf6;
       position: absolute;
       // top: 99999px;
       transform-origin: 50% 100%;
-      animation: crawl 10s linear 0s infinite;
+      animation: crawl 20s linear 0s infinite;
       z-index: 10;
 
       .text--inline {
@@ -163,7 +163,7 @@ $color-light-pink: #fefdf6;
 
     .star-wars {
       font-size: 5em;
-      height: 50vh;
+      height: 80vh;
       .crawl {
         left: -150px;
         .text--inline {
@@ -194,7 +194,7 @@ $color-light-pink: #fefdf6;
 
     .star-wars {
       font-size: 5em;
-      height: 50vh;
+      height: 80vh;
       .crawl {
         left: -150px;
         .text--inline {
@@ -225,7 +225,7 @@ $color-light-pink: #fefdf6;
 
     .star-wars {
       font-size: 5em;
-      height: 50vh;
+      height: 80vh;
       .crawl {
         .text--inline {
           .text--position {
@@ -254,7 +254,7 @@ $color-light-pink: #fefdf6;
     }
 
     .star-wars {
-      height: 50vh;
+      height: 80vh;
       font-size: 10em;
       .crawl {
         .text--inline {
@@ -284,7 +284,7 @@ $color-light-pink: #fefdf6;
     }
 
     .star-wars {
-      height: 50vh;
+      height: 80vh;
       font-size: 10em;
       .crawl {
         .text--inline {

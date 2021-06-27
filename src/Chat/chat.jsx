@@ -3,7 +3,11 @@ import "./style-chat.scss";
 
 class Chat extends React.Component {
   render() {
-    return <div class="chat-background"></div>;
+    return (
+      <div className="chat-background">
+        <h2>Chat Room</h2>
+      </div>
+    );
   }
 }
 
