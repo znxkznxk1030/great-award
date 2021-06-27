@@ -27,17 +27,18 @@ class Vote extends React.Component {
             <p> 이번주 가장 많이 활약한 멤버는 누구인가요? </p>
           </div>
         <div className="container">
-          <form onChange={this.onChangeValue.bind(this)}>
+          <form>
             {this.state.actors.map((actor) => {
               const selectedActorId = this.state.selectedActorId;
               return (
-                <div className="vote-item" key={actor.id}>
+                <div className="vote-item"  key={actor.id}>
                   <input
                     type="radio"
                     id={actor.id}
                     name={actor.name}
                     value={actor.id}
                     key={actor.id}
+                    onChange={this.onChangeValue.bind(this)}
                     checked={selectedActorId === actor.id}
                   ></input>
                   <label htmlFor={actor.id}>{actor.name}</label>
