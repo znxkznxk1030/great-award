@@ -1,2 +1,0 @@
-(this["webpackJsonpent-vote-app"]=this["webpackJsonpent-vote-app"]||[]).push([[7],{41:function(t,e,n){},44:function(t,e,n){"use strict";n.r(e);var a=n(14),c=n(15),r=n(17),o=n(16),i=n(0),s=n.n(i),u=(n(41),n(1)),p=function(t){Object(r.a)(n,t);var e=Object(o.a)(n);function n(){return Object(a.a)(this,n),e.apply(this,arguments)}return Object(c.a)(n,[{key:"render",value:function(){return Object(u.jsx)("div",{className:"chat-background",children:Object(u.jsx)("h2",{children:"Chat Room"})})}}]),n}(s.a.Component);e.default=p}}]);
-//# sourceMappingURL=7.3d6a0836.chunk.js.map
