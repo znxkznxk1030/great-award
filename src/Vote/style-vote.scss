@@ -1,40 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
 $item-color: #e54b4b;
 
+$header-offset-mb: 50px;
+$header-offset-dk: 57px;
+
 .vote-background {
   width: 100%;
-  height: 100%;
+  height: calc(100% - #{$header-offset-mb});
 
   font-family: "Black Han Sans", sans-serif;
   margin-top: 50px;
   // background: black;
   // color: white;
   .vote-question {
-      width: 100%;
-      text-align: center;
-      height: 100px;
-      .vote-title {
-        font-size: 30px;
-        margin-top: 10px;
-        color: $item-color;
-      }
-      p {
-        font-size: 20px;
-        margin-top: 10px;
-      }
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    .vote-title {
+      font-size: 30px;
+      margin-top: 10px;
+      color: $item-color;
     }
+    p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  }
 
   .container {
-    margin-top: 50px;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
+    // margin-top: 50px;
+    // position: absolute;
+    // transform: translate(-50%, -50%);
+    // left: 50%;
+    // top: 50%;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
 
     label {
       position: relative;
       color: $item-color;
-      width: 300px;
+      width: 100%;
       font-family: "Poppins", sans-serif;
       font-size: 30px;
       border: 2px solid $item-color;
@@ -72,12 +79,11 @@ $item-color: #e54b4b;
     .vote-btn--submit {
       width: 100%;
       height: 60px;
-      background: #5ECB66;
+      background: #5ecb66;
       border-radius: 5px;
       border: 0;
       color: white;
       font-size: 40px;
     }
-
   }
 }

@@ -2,7 +2,6 @@ import React from "react";
 import "./style-vote.scss";
 
 import { actors } from "../mock-data/actors";
-import { useState } from "react";
 
 class Vote extends React.Component {
   constructor(props) {
@@ -23,15 +22,15 @@ class Vote extends React.Component {
     return (
       <div className="vote-background">
         <div className="vote-question">
-            <p className="vote-title"> 7 / 11 ??? </p>
-            <p> 이번주 가장 많이 활약한 멤버는 누구인가요? </p>
-          </div>
+          <p className="vote-title"> 7 / 11 ??? </p>
+          <p> 이번주 가장 많이 활약한 멤버는 누구인가요? </p>
+        </div>
         <div className="container">
           <form>
             {this.state.actors.map((actor) => {
               const selectedActorId = this.state.selectedActorId;
               return (
-                <div className="vote-item"  key={actor.id}>
+                <div className="vote-item" key={actor.id}>
                   <input
                     type="radio"
                     id={actor.id}

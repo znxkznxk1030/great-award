@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
 
+$main-color: #e54b4b;
+
 body {
   background: #f0f8ea;
 }
 
 header {
-  background: #e54b4b;
+  background: $main-color;
   color: #ebebd3;
   padding: 1em 0;
   position: relative;

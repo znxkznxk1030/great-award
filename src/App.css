@@ -24,3 +24,7 @@ html, body {
   scrollbar-width: none;  /* Firefox */
 
 }
+
+.nav-bar {
+  height: 56px;
+}

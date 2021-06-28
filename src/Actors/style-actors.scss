@@ -3,13 +3,15 @@
 $frame-height-mb: 120px;
 $background-height-mb: $frame-height-mb * 6;
 $text-margin-top-mb: 36px;
-
 $frame-height: 320px;
 $background-height: $frame-height * 3;
 $text-margin-top: $frame-height / 2 + 30px;
 
+$header-offset-mb: 50px;
+$header-offset-dk: 57px;
+
 .actors-background {
-  height: $background-height-mb;
+  height: calc(100% - #{$header-offset-mb});
   width: 100%;
   background-image: none;
   background-color: black;
@@ -302,7 +304,7 @@ $text-margin-top: $frame-height / 2 + 30px;
 
 @media only screen and (min-width: 1200px) {
   .actors-background {
-    height: $background-height;
+    height: calc(100% - #{$header-offset-dk});
     flex-direction: row;
     .actor-frame {
       width: 50%;

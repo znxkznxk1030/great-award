@@ -1,5 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+$header-offset-mb: 50px;
+$header-offset-dk: 57px;
+
 .chat-background {
-  height: 100%;
+  height: calc(100% - #{$header-offset-mb});
   width: 100%;
-  background: black;
+  background: #c0392b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    45deg,
+    #8e44ad,
+    #c0392b
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    45deg,
+    #8e44ad,
+    #c0392b
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // background: blueviolet;
+}
+
+// default mobile
+.chat-box {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font-family: 'Jua', sans-serif;
+  // background: rgba(255, 255, 255, .5);
+
+  .chat-logs {
+    width: 100%;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px 20px 0 0;
+    // background: #fff;
+    margin: auto;
+    padding: 10px;
+    overflow-y: scroll;
+    .chat {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: flex-start;
+      margin-bottom: 10px;
+
+      .user-photo {
+        width: 65px;
+        height: 65px;
+        background: grey;
+        border-radius: 50%;
+      }
+
+      .chat-msg {
+        width: calc(100% - 90px);
+        margin: 5px 10px 10px 10px;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 1.2em;
+      }
+
+      .friend {
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+      }
+
+      .me {
+       background: rgba(0, 0, 0, 0.4);
+        color: white;
+        order: -1;
+      }
+    }
+  }
+
+  .chat-form {
+    width: 100%;
+    height: 11vh;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 20px 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+    .chat-text {
+      height: 70%;
+      width: 73%;
+      padding: 10px;
+      overflow-x: scroll;
+      font-size: 1em;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-family: 'Jua', sans-serif !important;
+    }
+
+    .chat-btn--snd {
+      height: 55px;
+      width: 55px;
+      margin-left: 15px;
+      border-radius: 50%;
+      background: #cb356b; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #bd3f32,
+        #cb356b
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #bd3f32,
+        #cb356b
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      i {
+        font-size: 2.2em;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+}
+
+@media (min-width: 1300px) {
+  .chat-background {
+    height: calc(100% - #{$header-offset-dk});
+    width: 100%;
+
+    .chat-logs {
+      width: 40%;
+      height: 80vh;
+    }
+
+    .chat-form {
+      width: 40%;
+    }
+  }
 }
