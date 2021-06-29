@@ -14,11 +14,17 @@ class WinnerCard extends React.Component {
               <span>MC</span>
             </div>
             <div className="company">
-              <img src="https://assets.codepen.io/1328906/SM_OG_image.jpeg?width=60&height=31&format=auto" />
+              <img
+                alt="sm C&C"
+                src="https://assets.codepen.io/1328906/SM_OG_image.jpeg?width=60&height=31&format=auto"
+              />
             </div>
           </div>
           <div className="profile-right">
-            <img src="https://assets.codepen.io/1328906/kang-001.png?width=174&height=175&format=auto" />
+            <img
+              alt="kanghodong"
+              src="https://assets.codepen.io/1328906/kang-001.png?width=174&height=175&format=auto"
+            />
           </div>
         </div>
         <div className="info-name">
