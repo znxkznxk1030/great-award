@@ -49,11 +49,21 @@ $header-offset-dk: 57px;
         height: 65px;
         background: grey;
         border-radius: 50%;
+        position: relative;
+        .user-name {
+          width: 75px;
+          font-size: 13px;
+          color: whitesmoke;
+          position: absolute;
+          bottom: -23px;
+          left: -5px;
+          text-align: center;
+        }
       }
 
       .chat-msg {
         width: calc(100% - 90px);
-        margin: 5px 10px 10px 10px;
+        margin: 20px 10px 10px 15px;
         padding: 15px;
         border-radius: 10px;
         font-size: 1.2em;

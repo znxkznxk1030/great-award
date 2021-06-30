@@ -1,43 +1,61 @@
 import React from "react";
 import "./style-chat.scss";
 
+import ChatBlock from "./chat-block";
+import { prefixSet, nameSet, getRandomInt } from "./chat-util";
+
 const io = require("socket.io-client");
 
 let socket = null;
-
 class Chat extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayName: "호들팬",
+      chatId: "",
+      displayName: "",
       chatValue: "",
-      chatlogs: [
-        {
-          value: "채팅 테스트",
-        },
-      ],
+      chatlogs: [],
     };
-    this.initializeChatServer();
   }
 
-  initializeChatServer() {
+  componentDidMount() {
+    this.initializeDisplayName().then(displayName => {
+      this.initializeChatServer(displayName);
+    });
+  }
+
+  initializeChatServer(displayName) {
     socket = io("ws://0.0.0.0:8080", {
       reconnectionDelayMax: 10000,
     });
 
     socket.emit("login", {
-      id: this.state.displayName,
+      id: displayName,
     });
 
     this.listenChatEvent();
+  }
+
+  initializeDisplayName() {
+    return new Promise((resolve, reject) => {
+      const prefix = prefixSet[getRandomInt(prefixSet.length)];
+      const name = nameSet[getRandomInt(nameSet.length)];
+      
+      console.log(prefix, name);
+      
+      this.setState({ displayName: prefix + name }, () => {
+        console.log(this.state.displayName);
+        resolve(this.state.displayName)
+      });
+    })
   }
 
   listenChatEvent() {
     socket.on("chat", (data) => {
       const chatlogs = this.state.chatlogs;
       chatlogs.push(data);
-      console.log("chatlogs > ",  chatlogs);
-      this.setState({chatlogs})
+      console.log("chatlogs > ", chatlogs);
+      this.setState({ chatlogs });
     });
   }
 
@@ -48,6 +66,7 @@ class Chat extends React.Component {
 
   handleBoardcastChat() {
     socket.emit("chat", {
+      name: this.state.displayName,
       value: this.state.chatValue,
     });
   }
@@ -57,29 +76,26 @@ class Chat extends React.Component {
       <div className="chat-background">
         <div className="chat-box">
           <div className="chat-logs">
-            <div className="chat">
-              <div className="user-photo"></div>
-              <p className="chat-msg friend">
-                {" "}
-                호들호들 김호들 화이팅! 호들호들 김호들 화이팅! 호들호들 김호들
+            <ChatBlock
+              name="겁먹은천해명"
+              message="호들호들 김호들 화이팅! 호들호들 김호들 화이팅! 호들호들 김호들
                 화이팅! 호들호들 김호들 화이팅! 호들호들 김호들 화이팅! 호들호들
-                김호들 화이팅!{" "}
-              </p>
-            </div>
-            <div className="chat">
-              <div className="user-photo"></div>
-              <p className="chat-msg me"> 역시 유느님 ! </p>
-            </div>
-            <div className="chat">
-              <div className="user-photo"></div>
-              <p className="chat-msg friend"> 결국은 신동이 다 푸는 듯 </p>
-            </div>
-            {this.state.chatlogs.map((chat, index) => (
-              <div className="chat" key={index}>
-                <div className="user-photo"></div>
-                <p className="chat-msg friend"> {chat.value} </p>
-              </div>
-            ))}
+                김호들 화이팅!"
+            />
+            <ChatBlock name="단서찾은유병재" message="역시 유느님!" />
+            <ChatBlock name="놀란신동" message="결국 신동이 다 푸는듯" />
+            {this.state.chatlogs.map((chat, index) => {
+              const isMine = chat.name === this.state.displayName;
+
+              return (
+                <ChatBlock
+                  key={index}
+                  isMine={isMine}
+                  name={chat.name}
+                  message={chat.value}
+                />
+              );
+            })}
           </div>
           <div className="chat-form">
             <input
