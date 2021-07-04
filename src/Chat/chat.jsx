@@ -19,7 +19,7 @@ class Chat extends React.Component {
   }
 
   componentDidMount() {
-    this.initializeDisplayName().then(displayName => {
+    this.initializeDisplayName().then((displayName) => {
       this.initializeChatServer(displayName);
     });
   }
@@ -40,14 +40,14 @@ class Chat extends React.Component {
     return new Promise((resolve, reject) => {
       const prefix = prefixSet[getRandomInt(prefixSet.length)];
       const name = nameSet[getRandomInt(nameSet.length)];
-      
+
       console.log(prefix, name);
-      
+
       this.setState({ displayName: prefix + name }, () => {
         console.log(this.state.displayName);
-        resolve(this.state.displayName)
+        resolve(this.state.displayName);
       });
-    })
+    });
   }
 
   listenChatEvent() {

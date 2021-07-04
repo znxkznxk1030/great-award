@@ -37,10 +37,10 @@ class Actor extends React.Component {
         />
         <p className="actor-name">{actor.name}</p>
         <p className="actor-nickname">{actor.nickname}</p>
-        <div class="bg-triangle--before"></div>
-        <div class="bg-triangle--after"></div>
-        <div class="comment--left">{leftComment}</div>
-        <div class="comment--right">{rightComment}</div>
+        <div className="bg-triangle--before"></div>
+        <div className="bg-triangle--after"></div>
+        <div className="comment--left">{leftComment}</div>
+        <div className="comment--right">{rightComment}</div>
       </div>
     );
   }
