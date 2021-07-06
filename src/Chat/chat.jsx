@@ -6,6 +6,8 @@ import { prefixSet, nameSet, getRandomInt } from "./chat-util";
 
 const io = require("socket.io-client");
 
+// wss://52.78.163.98:8080
+
 let socket = null;
 class Chat extends React.Component {
   constructor(props) {
@@ -20,12 +22,13 @@ class Chat extends React.Component {
 
   componentDidMount() {
     this.initializeDisplayName().then((displayName) => {
-      this.initializeChatServer(displayName);
+      // this.initializeChatServer(displayName);
     });
   }
 
   initializeChatServer(displayName) {
     socket = io("ws://0.0.0.0:8080", {
+      secure: true,
       reconnectionDelayMax: 10000,
     });
 

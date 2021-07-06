@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, useRef } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 import "./App.css";
@@ -12,10 +12,13 @@ const Vote = lazy(() => import("./Vote/vote"));
 const Chat = lazy(() => import("./Chat/chat"));
 
 const App = () => {
+
+  const navbarRef = useRef();
+  
   return (
     <div className="app">
       <Router>
-        <Navbar></Navbar>
+        <Navbar ref={navbarRef}></Navbar>
         <Switch>
           <Route exact path="/weekly-winner" component={Winner} />
           <Route exact path="/actors" component={Actors} />

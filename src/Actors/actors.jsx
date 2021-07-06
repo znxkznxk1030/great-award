@@ -8,11 +8,15 @@ class Actors extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      actors,
+      actors: [],
     };
   }
 
-  componentDidMounted() {}
+  componentDidMount() {
+    this.setState({
+      actors: actors
+    })
+  }
 
   render() {
     return (

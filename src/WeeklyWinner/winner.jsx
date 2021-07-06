@@ -30,6 +30,7 @@ var PIXEL_RATIO = (function () {
 class Winner extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       mouse: {
         x: 0,
@@ -38,15 +39,16 @@ class Winner extends React.Component {
       ctx: null,
       canvas: null,
       particles: [],
-      hadshot: false,
+      hadshot: 0,
       eventdone: false,
     };
-
+    
     this.refMain = React.createRef();
     this.refCanvas = React.createRef();
   }
 
   componentDidMount() {
+
     this.initializeFirework();
     this.animate();
   }
@@ -69,8 +71,8 @@ class Winner extends React.Component {
       ctx,
     });
 
-    window.addEventListener("click", this.onClickCanvas.bind(this));
-    window.addEventListener("resize", this.resize.bind(this));
+    canvas.addEventListener("click", this.onClickCanvas.bind(this));
+    canvas.addEventListener("resize", this.resize.bind(this));
 
     ctx.scale(2, 2);
     this.resize();
@@ -105,7 +107,7 @@ class Winner extends React.Component {
   }
 
   onClickCanvas(e) {
-    if (this.state.hadshot) return;
+    if (this.state.hadshot >= 2) return;
 
     const clientX = e.clientX;
     const clientY = e.clientY;
@@ -125,7 +127,7 @@ class Winner extends React.Component {
       this.state.particles.push(particle);
     }
 
-    this.setState({ hadshot: true });
+    this.setState({ hadshot: this.state.hadshot + 1 });
   }
 
   resize() {

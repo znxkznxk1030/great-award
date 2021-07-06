@@ -20,11 +20,18 @@ class Navbar extends React.Component {
     }));
   }
 
+  closeNavbar() {
+    console.log("closeNavbar")
+    this.setState({
+      isMenuToggleOn: false,
+    });
+  }
+
   render() {
     return (
       <header>
         <div className="container">
-          <Link to="/">
+          <Link to="/ent-honor" onClick={this.closeNavbar.bind(this)}>
             <h1 className="logo">
               great<span>awards</span>
             </h1>
@@ -39,7 +46,7 @@ class Navbar extends React.Component {
               {this.state.menulist.map((menu, index) => {
                 return (
                   <li key={index}>
-                    <Link to={menu.link}>
+                    <Link to={menu.link} onClick={this.closeNavbar.bind(this)}>
                       <i
                         className={" fa " + menu.icon + " site-nav--icon "}
                       ></i>
