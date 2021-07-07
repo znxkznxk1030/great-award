@@ -3,7 +3,7 @@ import "./style-chat.scss";
 
 import ChatBlock from "./chat-block";
 import { prefixSet, nameSet, getRandomInt } from "./chat-util";
-import xss from "xss"
+let xss = require("xss");
 
 const io = require("socket.io-client");
 
@@ -34,7 +34,7 @@ class Chat extends React.Component {
     });
 
     socket.emit("login", {
-      id: xss(displayName),
+      id: displayName,
     });
 
     this.listenChatEvent();
@@ -57,7 +57,11 @@ class Chat extends React.Component {
   listenChatEvent() {
     socket.on("chat", (data) => {
       const chatlogs = this.state.chatlogs;
-      chatlogs.push(xss(data));
+      let filteredData = {};
+      Object.keys(data).forEach((key) => {
+        filteredData[key] = xss(data[key]);
+      });
+      chatlogs.push(filteredData);
       this.setState({ chatlogs });
     });
   }

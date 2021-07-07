@@ -21,7 +21,7 @@ class Navbar extends React.Component {
   }
 
   closeNavbar() {
-    console.log("closeNavbar")
+    console.log("closeNavbar");
     this.setState({
       isMenuToggleOn: false,
     });

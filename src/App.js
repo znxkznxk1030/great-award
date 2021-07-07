@@ -12,9 +12,8 @@ const Vote = lazy(() => import("./Vote/vote"));
 const Chat = lazy(() => import("./Chat/chat"));
 
 const App = () => {
-
   const navbarRef = useRef();
-  
+
   return (
     <div className="app">
       <Router>

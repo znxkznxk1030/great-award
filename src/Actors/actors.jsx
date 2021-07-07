@@ -14,8 +14,8 @@ class Actors extends React.Component {
 
   componentDidMount() {
     this.setState({
-      actors: actors
-    })
+      actors: actors,
+    });
   }
 
   render() {

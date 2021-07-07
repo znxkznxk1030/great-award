@@ -42,13 +42,12 @@ class Winner extends React.Component {
       hadshot: 0,
       eventdone: false,
     };
-    
+
     this.refMain = React.createRef();
     this.refCanvas = React.createRef();
   }
 
   componentDidMount() {
-
     this.initializeFirework();
     this.animate();
   }
