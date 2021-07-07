@@ -3,6 +3,7 @@ import "./style-chat.scss";
 
 import ChatBlock from "./chat-block";
 import { prefixSet, nameSet, getRandomInt } from "./chat-util";
+import xss from "xss"
 
 const io = require("socket.io-client");
 
@@ -22,18 +23,18 @@ class Chat extends React.Component {
 
   componentDidMount() {
     this.initializeDisplayName().then((displayName) => {
-      // this.initializeChatServer(displayName);
+      this.initializeChatServer(displayName);
     });
   }
 
   initializeChatServer(displayName) {
-    socket = io("ws://0.0.0.0:8080", {
+    socket = io("ws://great-award-server.site:8080", {
       secure: true,
       reconnectionDelayMax: 10000,
     });
 
     socket.emit("login", {
-      id: displayName,
+      id: xss(displayName),
     });
 
     this.listenChatEvent();
@@ -56,8 +57,7 @@ class Chat extends React.Component {
   listenChatEvent() {
     socket.on("chat", (data) => {
       const chatlogs = this.state.chatlogs;
-      chatlogs.push(data);
-      console.log("chatlogs > ", chatlogs);
+      chatlogs.push(xss(data));
       this.setState({ chatlogs });
     });
   }
@@ -79,14 +79,14 @@ class Chat extends React.Component {
       <div className="chat-background">
         <div className="chat-box">
           <div className="chat-logs">
-            <ChatBlock
+            {/* <ChatBlock
               name="겁먹은천해명"
               message="호들호들 김호들 화이팅! 호들호들 김호들 화이팅! 호들호들 김호들
                 화이팅! 호들호들 김호들 화이팅! 호들호들 김호들 화이팅! 호들호들
                 김호들 화이팅!"
             />
             <ChatBlock name="단서찾은유병재" message="역시 유느님!" />
-            <ChatBlock name="놀란신동" message="결국 신동이 다 푸는듯" />
+            <ChatBlock name="놀란신동" message="결국 신동이 다 푸는듯" /> */}
             {this.state.chatlogs.map((chat, index) => {
               const isMine = chat.name === this.state.displayName;
 
