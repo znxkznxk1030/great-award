@@ -3,16 +3,17 @@ import "./style-chat.scss";
 
 import ChatBlock from "./chat-block";
 import { prefixSet, nameSet, getRandomInt } from "./chat-util";
+import { firestore } from "../Firebase";
+
 let xss = require("xss");
 
 const io = require("socket.io-client");
-
-// wss://52.78.163.98:8080
 
 let socket = null;
 class Chat extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       chatId: "",
       displayName: "",
@@ -21,14 +22,33 @@ class Chat extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.initializeDisplayName().then((displayName) => {
-      this.initializeChatServer(displayName);
+  async componentDidMount() {
+    this.messageRef = firestore.collection("message");
+    this.query = this.messageRef.orderBy("createdAt").limit(25);
+
+    await this.fetchMessages();
+  }
+
+  fetchMessages() {
+    return new Promise((resolve, reject) => {
+      this.query.onSnapshot((snapshot) => {
+        snapshot.forEach((doc) => {
+          const chatlogs = this.state.chatlogs;
+          let filteredData = {};
+          const data = doc.data();
+          Object.keys(data).forEach((key) => {
+            filteredData[key] = xss(data[key]);
+          });
+          chatlogs.push(filteredData);
+          this.setState({ chatlogs });
+        });
+      });
+      resolve();
     });
   }
 
   initializeChatServer(displayName) {
-    socket = io("ws://great-award-server.site:8080", {
+    socket = io("wss://great-award-server.site", {
       secure: true,
       reconnectionDelayMax: 10000,
     });
@@ -66,7 +86,7 @@ class Chat extends React.Component {
     });
   }
 
-  handleChatValueChange(e) {
+  setChatValue(e) {
     const chatValue = e.target.value;
     this.setState({ chatValue });
   }
@@ -99,7 +119,7 @@ class Chat extends React.Component {
                   key={index}
                   isMine={isMine}
                   name={chat.name}
-                  message={chat.value}
+                  message={chat.text}
                 />
               );
             })}
@@ -109,7 +129,7 @@ class Chat extends React.Component {
               className="chat-text"
               type="text"
               value={this.state.chatValue}
-              onChange={this.handleChatValueChange.bind(this)}
+              onChange={this.setChatValue.bind(this)}
             ></input>
             <button
               className="chat-btn--snd"

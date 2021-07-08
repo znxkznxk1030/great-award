@@ -1,9 +1,8 @@
 import { lazy, useRef } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./Navbar/navbar";
 
 import "./App.css";
-
-import Navbar from "./Navbar/navbar";
 
 const Home = lazy(() => import("./Home/home"));
 const Actors = lazy(() => import("./Actors/actors"));
