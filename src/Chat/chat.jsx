@@ -69,6 +69,9 @@ class Chat extends React.Component {
   }
 
   setChatValue(e) {
+    const originLength = this.state.chatValue.length
+    const newLength = e.target.value.length
+    if (this.state.chatValue.length > 100 && originLength <= newLength) return;
     const chatValue = xss(e.target.value);
     this.setState({ chatValue });
   }
