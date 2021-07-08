@@ -4,12 +4,9 @@ import "./style-chat.scss";
 import ChatBlock from "./chat-block";
 import { prefixSet, nameSet, getRandomInt } from "./chat-util";
 import { firestore } from "../Firebase";
+import { uid } from "uid";
 
 let xss = require("xss");
-
-const io = require("socket.io-client");
-
-let socket = null;
 class Chat extends React.Component {
   constructor(props) {
     super(props);
@@ -19,45 +16,45 @@ class Chat extends React.Component {
       displayName: "",
       chatValue: "",
       chatlogs: [],
+      uid: "",
     };
   }
 
   async componentDidMount() {
-    this.messageRef = firestore.collection("message");
-    this.query = this.messageRef.orderBy("createdAt").limit(25);
+    this.firestore = firestore;
+    this.messageRef = this.firestore.collection("message");
+    this.query = this.messageRef.orderBy("createdAt").limit(200);
 
-    await this.fetchMessages();
+    await this.initializeUid();
+    await this.initializeDisplayName();
+    await this.initializeChatServer();
   }
 
-  fetchMessages() {
+  initializeChatServer() {
     return new Promise((resolve, reject) => {
+
       this.query.onSnapshot((snapshot) => {
+        const chatlogs = [];
         snapshot.forEach((doc) => {
-          const chatlogs = this.state.chatlogs;
           let filteredData = {};
           const data = doc.data();
           Object.keys(data).forEach((key) => {
             filteredData[key] = xss(data[key]);
           });
           chatlogs.push(filteredData);
-          this.setState({ chatlogs });
         });
+        this.setState({ chatlogs });
       });
       resolve();
     });
   }
 
-  initializeChatServer(displayName) {
-    socket = io("wss://great-award-server.site", {
-      secure: true,
-      reconnectionDelayMax: 10000,
+  initializeUid() {
+    return new Promise((resolve, reject) => {
+      this.setState({ uid: uid() }, () => {
+        resolve();
+      });
     });
-
-    socket.emit("login", {
-      id: displayName,
-    });
-
-    this.listenChatEvent();
   }
 
   initializeDisplayName() {
@@ -65,37 +62,26 @@ class Chat extends React.Component {
       const prefix = prefixSet[getRandomInt(prefixSet.length)];
       const name = nameSet[getRandomInt(nameSet.length)];
 
-      console.log(prefix, name);
-
       this.setState({ displayName: prefix + name }, () => {
-        console.log(this.state.displayName);
         resolve(this.state.displayName);
       });
     });
   }
 
-  listenChatEvent() {
-    socket.on("chat", (data) => {
-      const chatlogs = this.state.chatlogs;
-      let filteredData = {};
-      Object.keys(data).forEach((key) => {
-        filteredData[key] = xss(data[key]);
-      });
-      chatlogs.push(filteredData);
-      this.setState({ chatlogs });
-    });
-  }
-
   setChatValue(e) {
-    const chatValue = e.target.value;
+    const chatValue = xss(e.target.value);
     this.setState({ chatValue });
   }
 
-  handleBoardcastChat() {
-    socket.emit("chat", {
+  async onSubmit() {
+    await this.messageRef.add({
+      text: this.state.chatValue,
       name: this.state.displayName,
-      value: this.state.chatValue,
-    });
+      uid: this.state.uid,
+      createdAt: new Date().toISOString()
+    })
+
+    this.setState({ chatValue: "" });
   }
 
   render() {
@@ -103,14 +89,6 @@ class Chat extends React.Component {
       <div className="chat-background">
         <div className="chat-box">
           <div className="chat-logs">
-            {/* <ChatBlock
-              name="겁먹은천해명"
-              message="호들호들 김호들 화이팅! 호들호들 김호들 화이팅! 호들호들 김호들
-                화이팅! 호들호들 김호들 화이팅! 호들호들 김호들 화이팅! 호들호들
-                김호들 화이팅!"
-            />
-            <ChatBlock name="단서찾은유병재" message="역시 유느님!" />
-            <ChatBlock name="놀란신동" message="결국 신동이 다 푸는듯" /> */}
             {this.state.chatlogs.map((chat, index) => {
               const isMine = chat.name === this.state.displayName;
 
@@ -133,7 +111,7 @@ class Chat extends React.Component {
             ></input>
             <button
               className="chat-btn--snd"
-              onClick={this.handleBoardcastChat.bind(this)}
+              onClick={this.onSubmit.bind(this)}
             >
               <i className="fas fa-keyboard"></i>
             </button>
