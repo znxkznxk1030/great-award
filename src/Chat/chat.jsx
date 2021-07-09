@@ -32,7 +32,6 @@ class Chat extends React.Component {
 
   initializeChatServer() {
     return new Promise((resolve, reject) => {
-
       this.query.onSnapshot((snapshot) => {
         const chatlogs = [];
         snapshot.forEach((doc) => {
@@ -69,8 +68,8 @@ class Chat extends React.Component {
   }
 
   setChatValue(e) {
-    const originLength = this.state.chatValue.length
-    const newLength = e.target.value.length
+    const originLength = this.state.chatValue.length;
+    const newLength = e.target.value.length;
     if (this.state.chatValue.length > 100 && originLength <= newLength) return;
     const chatValue = xss(e.target.value);
     this.setState({ chatValue });
@@ -81,8 +80,8 @@ class Chat extends React.Component {
       text: this.state.chatValue,
       name: this.state.displayName,
       uid: this.state.uid,
-      createdAt: new Date().toISOString()
-    })
+      createdAt: new Date().toISOString(),
+    });
 
     this.setState({ chatValue: "" });
   }

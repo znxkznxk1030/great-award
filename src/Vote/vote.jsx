@@ -2,7 +2,20 @@ import React from "react";
 import "./style-vote.scss";
 
 import { actors } from "../mock-data/actors";
+import Modal from "react-modal";
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+  },
+};
+
+Modal.setAppElement("#root");
 class Vote extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +23,7 @@ class Vote extends React.Component {
     this.state = {
       actors,
       selectedActorId: -1,
+      modalIsOpen: false,
     };
   }
 
@@ -17,6 +31,17 @@ class Vote extends React.Component {
     console.log(e.target.value);
     this.setState({ selectedActorId: e.target.value });
   }
+
+  openModal(e) {
+    e.preventDefault();
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
+  }
+
+  afterOpenModal() {}
 
   render() {
     return (
@@ -46,11 +71,26 @@ class Vote extends React.Component {
               );
             })}
 
-            <button className="vote-btn--submit" type="submit">
+            <button className="vote-btn--submit" onClick={this.openModal.bind(this)}>
               제 출
             </button>
           </form>
         </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onAfterOpen={this.afterOpenModal.bind(this)}
+          onRequestClose={this.closeModal.bind(this)}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <h2>Hello</h2>
+          <button onClick={this.closeModal.bind(this)}>close</button>
+          <div>I am a modal</div>
+          <form>
+            <button>tab navigation</button>
+            <button>stays</button>
+          </form>
+        </Modal>
       </div>
     );
   }
