@@ -12,6 +12,10 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    width: "300px",
+    height: "200px",
+    padding: "10px",
+    background: "#e54b4b"
   },
 };
 
@@ -86,12 +90,15 @@ class Vote extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2>Hello</h2>
-          <button onClick={this.closeModal.bind(this)}>close</button>
-          <div>I am a modal</div>
+          <header className="modal-header">
+            <h2> 대탈출 대투표</h2>
+          </header>
+          <main>
+            <div className="modal-body">가장 많이 활약한 멤버는 {this.state.selectedActorId>0? actors[this.state.selectedActorId - 1].name:""} 맞나요?</div>
+          </main>
           <form>
-            <button>tab navigation</button>
-            <button>stays</button>
+            <button>네!</button>
+            <button>아니요..</button>
           </form>
         </Modal>
       </div>
