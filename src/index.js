@@ -4,15 +4,10 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import Spinner from "./Spinner/spinner";
+
 ReactDOM.render(
-  <Suspense
-    fallback={
-      <div>
-        loading...
-        <h1>loading .................. </h1>
-      </div>
-    }
-  >
+  <Suspense fallback={<Spinner />}>
     <React.StrictMode>
       <App />
     </React.StrictMode>

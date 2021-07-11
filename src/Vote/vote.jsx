@@ -71,7 +71,10 @@ class Vote extends React.Component {
               );
             })}
 
-            <button className="vote-btn--submit" onClick={this.openModal.bind(this)}>
+            <button
+              className="vote-btn--submit"
+              onClick={this.openModal.bind(this)}
+            >
               제 출
             </button>
           </form>

@@ -1,0 +1,57 @@
+$color-pink: #e54b4b;
+
+.spinner-wrapper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.spinner {
+  max-width: 200px;
+  animation: 2s linear infinite svg--animation;
+}
+
+circle {
+    fill: transparent;
+    stroke: $color-pink;
+    stroke-width: 10;
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    /* A default start point of svg circle is 3'o clock */
+    stroke-dasharray: 283; 
+    animation: 1.4s ease-in-out infinite both circle--animation;
+  }
+
+@keyframes circle--animation {
+  0%,
+  25% {
+    stroke-dashoffset: 280;
+    transform: rotate(0);
+  }
+
+  50%,
+  75% {
+    stroke-dashoffset: 75;
+    transform: rotate(45deg);
+  }
+
+  100% {
+    stroke-dashoffset: 280;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes svg--animation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg)
+  }
+}
