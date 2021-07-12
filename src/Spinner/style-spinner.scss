@@ -18,15 +18,15 @@ $color-pink: #e54b4b;
 }
 
 circle {
-    fill: transparent;
-    stroke: $color-pink;
-    stroke-width: 10;
-    stroke-linecap: round;
-    transform-origin: 50% 50%;
-    /* A default start point of svg circle is 3'o clock */
-    stroke-dasharray: 283; 
-    animation: 1.4s ease-in-out infinite both circle--animation;
-  }
+  fill: transparent;
+  stroke: $color-pink;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform-origin: 50% 50%;
+  /* A default start point of svg circle is 3'o clock */
+  stroke-dasharray: 283;
+  animation: 1.4s ease-in-out infinite both circle--animation;
+}
 
 @keyframes circle--animation {
   0%,
@@ -52,6 +52,6 @@ circle {
     transform: rotateZ(0deg);
   }
   100% {
-    transform: rotateZ(360deg)
+    transform: rotateZ(360deg);
   }
 }

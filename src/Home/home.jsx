@@ -67,7 +67,7 @@ class Home extends React.Component {
             ></img>
           ))}
         </div>
-        <div className="video-wrapper">
+        {/* <div className="video-wrapper">
           <iframe
             className="video--iframe"
             src="https://www.youtube.com/embed/IZfBeMuPSBg"
@@ -76,7 +76,7 @@ class Home extends React.Component {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
       </div>
     );
   }

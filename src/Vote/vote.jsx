@@ -3,6 +3,7 @@ import "./style-vote.scss";
 
 import { actors } from "../mock-data/actors";
 import Modal from "react-modal";
+import VoteModal from "../VoteModal/vote-modal"
 
 const customStyles = {
   content: {
@@ -12,10 +13,9 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    width: "300px",
-    height: "200px",
-    padding: "10px",
-    background: "#e54b4b"
+    width: "320px",
+    height: "180px",
+    padding: "0px",
   },
 };
 
@@ -38,6 +38,7 @@ class Vote extends React.Component {
 
   openModal(e) {
     e.preventDefault();
+    if (this.state.selectedActorId === -1 ) return;
     this.setState({ modalIsOpen: true });
   }
 
@@ -90,16 +91,9 @@ class Vote extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <header className="modal-header">
-            <h2> 대탈출 대투표</h2>
-          </header>
-          <main>
-            <div className="modal-body">가장 많이 활약한 멤버는 {this.state.selectedActorId>0? actors[this.state.selectedActorId - 1].name:""} 맞나요?</div>
-          </main>
-          <form>
-            <button>네!</button>
-            <button>아니요..</button>
-          </form>
+          <VoteModal selectedActor={this.state.selectedActorId > 0
+              ? actors[this.state.selectedActorId - 1].name
+              : ""} />
         </Modal>
       </div>
     );
