@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/great-award/static/css/main.3e1b1317.chunk.css",
-    "main.js": "/great-award/static/js/main.85bd4f05.chunk.js",
-    "main.js.map": "/great-award/static/js/main.85bd4f05.chunk.js.map",
-    "runtime-main.js": "/great-award/static/js/runtime-main.c51e202d.js",
-    "runtime-main.js.map": "/great-award/static/js/runtime-main.c51e202d.js.map",
+    "main.js": "/great-award/static/js/main.76327ba4.chunk.js",
+    "main.js.map": "/great-award/static/js/main.76327ba4.chunk.js.map",
+    "runtime-main.js": "/great-award/static/js/runtime-main.c2c0db6b.js",
+    "runtime-main.js.map": "/great-award/static/js/runtime-main.c2c0db6b.js.map",
     "static/js/2.03731f9b.chunk.js": "/great-award/static/js/2.03731f9b.chunk.js",
     "static/js/2.03731f9b.chunk.js.map": "/great-award/static/js/2.03731f9b.chunk.js.map",
     "static/js/3.1a8407a1.chunk.js": "/great-award/static/js/3.1a8407a1.chunk.js",
@@ -17,7 +17,7 @@
     "static/css/6.4bcb7732.chunk.css": "/great-award/static/css/6.4bcb7732.chunk.css",
     "static/js/6.af62b4d9.chunk.js": "/great-award/static/js/6.af62b4d9.chunk.js",
     "static/js/6.af62b4d9.chunk.js.map": "/great-award/static/js/6.af62b4d9.chunk.js.map",
-    "static/css/7.55816236.chunk.css": "/great-award/static/css/7.55816236.chunk.css",
+    "static/css/7.79ac6c8b.chunk.css": "/great-award/static/css/7.79ac6c8b.chunk.css",
     "static/js/7.4b4f3140.chunk.js": "/great-award/static/js/7.4b4f3140.chunk.js",
     "static/js/7.4b4f3140.chunk.js.map": "/great-award/static/js/7.4b4f3140.chunk.js.map",
     "static/css/8.8164eefe.chunk.css": "/great-award/static/css/8.8164eefe.chunk.css",
@@ -31,7 +31,7 @@
     "index.html": "/great-award/index.html",
     "static/css/5.862071c8.chunk.css.map": "/great-award/static/css/5.862071c8.chunk.css.map",
     "static/css/6.4bcb7732.chunk.css.map": "/great-award/static/css/6.4bcb7732.chunk.css.map",
-    "static/css/7.55816236.chunk.css.map": "/great-award/static/css/7.55816236.chunk.css.map",
+    "static/css/7.79ac6c8b.chunk.css.map": "/great-award/static/css/7.79ac6c8b.chunk.css.map",
     "static/css/8.8164eefe.chunk.css.map": "/great-award/static/css/8.8164eefe.chunk.css.map",
     "static/css/9.e7517517.chunk.css.map": "/great-award/static/css/9.e7517517.chunk.css.map",
     "static/css/main.3e1b1317.chunk.css.map": "/great-award/static/css/main.3e1b1317.chunk.css.map",
@@ -42,9 +42,9 @@
     "static/media/style-home.scss": "/great-award/static/media/space-background.5f2733e3.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c51e202d.js",
+    "static/js/runtime-main.c2c0db6b.js",
     "static/js/2.03731f9b.chunk.js",
     "static/css/main.3e1b1317.chunk.css",
-    "static/js/main.85bd4f05.chunk.js"
+    "static/js/main.76327ba4.chunk.js"
   ]
 }
