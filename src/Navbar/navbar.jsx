@@ -21,7 +21,6 @@ class Navbar extends React.Component {
   }
 
   closeNavbar() {
-    console.log("closeNavbar");
     this.setState({
       isMenuToggleOn: false,
     });
@@ -31,7 +30,7 @@ class Navbar extends React.Component {
     return (
       <header>
         <div className="container">
-          <Link to="/ent-honor" onClick={this.closeNavbar.bind(this)}>
+          <Link to="/great-award" onClick={this.closeNavbar.bind(this)}>
             <h1 className="logo">
               great<span>awards</span>
             </h1>

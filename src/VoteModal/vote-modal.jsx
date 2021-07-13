@@ -12,8 +12,8 @@ class VoteModal extends React.Component {
           가장 많이 활약한 멤버는 <h2> {this.props.selectedActor} </h2> 맞나요?
         </div>
         <div className="modal-footer">
-          <button>네</button>
-          <button>아니요</button>
+          <button onClick={this.props.onConfirm}>네</button>
+          <button onClick={this.props.onReject}>아니요</button>
         </div>
       </div>
     );

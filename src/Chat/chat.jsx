@@ -6,6 +6,23 @@ import { prefixSet, nameSet, getRandomInt } from "./chat-util";
 import { firestore } from "../Firebase";
 import { uid } from "uid";
 
+import Modal from "react-modal";
+import WarnModal from "../VoteModal/warn-modal";
+
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    width: "320px",
+    height: "180px",
+    padding: "0px",
+  },
+};
+
 let xss = require("xss");
 class Chat extends React.Component {
   constructor(props) {
@@ -17,6 +34,7 @@ class Chat extends React.Component {
       chatValue: "",
       chatlogs: [],
       uid: "",
+      modalIsOpen: false,
     };
   }
 
@@ -76,6 +94,10 @@ class Chat extends React.Component {
   }
 
   async onSubmit() {
+    if (this.state.chatValue.length < 3) {
+      this.setState({ modalIsOpen: true });
+      return;
+    }
     await this.messageRef.add({
       text: this.state.chatValue,
       name: this.state.displayName,
@@ -84,6 +106,15 @@ class Chat extends React.Component {
     });
 
     this.setState({ chatValue: "" });
+  }
+
+  openModal(e) {
+    e.preventDefault();
+    this.setState({ modalIsOpen: true });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   render() {
@@ -119,6 +150,17 @@ class Chat extends React.Component {
             </button>
           </div>
         </div>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal.bind(this)}
+          style={customStyles}
+          contentLabel="Warn Modal"
+          ariaHideApp={false}
+        >
+            <WarnModal onClose={this.closeModal.bind(this)}
+            title={"대탈출 실시간 채팅방"}
+            message={"3글자 이상 작성해주세요."} />
+        </Modal>
       </div>
     );
   }

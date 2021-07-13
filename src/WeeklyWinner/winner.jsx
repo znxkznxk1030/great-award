@@ -60,7 +60,7 @@ class Winner extends React.Component {
     let stageWidth = mainEl.clientWidth;
     let stageHeight = mainEl.clientHeight;
 
-    console.log(mainEl.clientHeight);
+    // console.log(mainEl.clientHeight);
 
     ctx.canvas.width = stageWidth * 2;
     ctx.canvas.height = stageHeight * 2;

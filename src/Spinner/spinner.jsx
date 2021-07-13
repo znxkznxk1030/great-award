@@ -4,10 +4,10 @@ import "./style-spinner.scss";
 class Spinner extends React.Component {
   render() {
     return (
-      <div class="spinner-wrapper">
+      <div className="spinner-wrapper">
         <svg
-          class="spinner"
-          viewBox="0 0 75 75"
+          className="spinner"
+          viewBox="0 0 100 100"
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle cx="50" cy="50" r="45" />

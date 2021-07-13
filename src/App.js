@@ -1,5 +1,5 @@
 import { lazy, useRef } from "react";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route, MemoryRouter as Router } from "react-router-dom";
 import Navbar from "./Navbar/navbar";
 
 import "./App.css";
