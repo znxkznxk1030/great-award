@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# 대탈출 4 커뮤니티
+> https://znxkznxk1030.github.io/great-award/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 퇴근 후 작업한 토이프로젝트
+- React 와 반응형 디자인을 연습하기 위한 프로젝트
+- 제작기간 약 3주
 
-## Available Scripts
 
-In the project directory, you can run:
+## Layout
+### Navigation Bar
+- 반응형 네이게이션 바
+- 모바일의 경우 햄버거버튼
+- 데스크탑의 경우 상단 바
 
-### `yarn start`
+## Home
+### 날라가는 멤버들
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 스타워즈 글씨 이벤트
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Weekly 
 
-### `yarn test`
+<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="vYxvdLM" data-user="znxkznxk1030" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+  <span>See the Pen <a href="https://codepen.io/znxkznxk1030/pen/vYxvdLM">
+  ent card</a> by YoungSoo Kim (<a href="https://codepen.io/znxkznxk1030">@znxkznxk1030</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<iframe height="300" style="width: 100%;" scrolling="no" title="ent card" src="https://codepen.io/znxkznxk1030/embed/vYxvdLM?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/znxkznxk1030/pen/vYxvdLM">
+  ent card</a> by YoungSoo Kim (<a href="https://codepen.io/znxkznxk1030">@znxkznxk1030</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
-### `yarn build`
+### 피파 카드 디자인
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Canvas를 이용한 폭죽 이벤트
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://codepen.io/znxkznxk1030/pen/vYxvdLM
+## Vote
+- Firebase의 실시간 데이터베이스와 연동한 투표시스템
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Voting 스타일 라디오버튼
+## Actors
+- 멤버 소개 페이지
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Chat
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Firebase의 실시간 데이터베이스아 연동한 채팅시스템
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Chat Room 스타일
