@@ -7,10 +7,7 @@ $color-light-pink: #fefdf6;
 .home-background {
   height: 100vh;
   width: 100%;
-  background-size: cover;
-  background-color: black;
-  background-image: url("./space-background.jpeg");
-  background-size: cover;
+  background: #000;
   font-family: "Black Han Sans", sans-serif;
 
   .title--header {
